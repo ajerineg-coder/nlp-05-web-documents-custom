@@ -1,8 +1,9 @@
-# nlp-05-web-documents
+
+# nlp-05-web-documents-custom
 
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
-[![CI](https://github.com/denisecase/nlp-05-web-documents/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/denisecase/nlp-05-web-documents/actions/workflows/ci-python-zensical.yml)
-[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/nlp-05-web-documents/)
+[![CI](https://github.com/ajerineg-coder/nlp-05-web-documents-custom/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/ajerineg-coder/nlp-05-web-documents-custom/actions/workflows/ci-python-zensical.yml)
+[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://ajerineg-coder.github.io/nlp-05-web-documents-custom/)
 
 [![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
 [![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
@@ -13,31 +14,25 @@
 
 ## Project Overview
 
-Author: Denise Case
+Author: Addie Gemmell
 
-Date: 2026 October
+Date: November 2026
 
 Fifth project in the Web Mining and Applied NLP course.
 
-This project introduces web document acquisition
-and structured information extraction from HTML.
+This project focuses on acquiring and extracting information from HTML web documents using Python.
 
-The goal is to retrieve a web page,
-validate its document structure,
-extract meaningful text and metadata,
-and save the results for analysis.
+The goal is to retrieve a web page, validate its structure, extract relevant information, and save the results for further analysis.
 
-The project extends the EVTL pipeline approach
-introduced in Module 4 to work with HTML documents
-rather than JSON API responses.
+I am interested in exploring how web document extraction can be applied to financial fraud research and how unstructured information can be transformed into useful data for analysis.
 
-The project is configured in
-[pyproject.toml](pyproject.toml).
+This project builds on the EVTL pipeline introduced in Module 4, using HTML documents rather than JSON API responses.
+
+The project is configured in [pyproject.toml](pyproject.toml).
 
 ## Data
 
-The example retrieves an academic paper's abstract page
-from [arXiv](https://arxiv.org/abs/2602.20021).
+The original example retrieves an academic paper's abstract page from [arXiv](https://arxiv.org/abs/2602.20021).
 
 The source document contains information such as:
 
@@ -48,14 +43,13 @@ The source document contains information such as:
 - Submission information.
 - arXiv identifier.
 
-The pipeline preserves the original HTML
-and produces a structured CSV dataset
-containing extracted metadata.
+For my customized project, I plan to explore academic research related to financial fraud detection.
+
+The pipeline preserves the original HTML and produces a structured CSV dataset containing extracted metadata.
 
 ## Approach
 
-The project uses a modular Python pipeline
-to acquire, validate, transform, and save HTML data.
+The project uses a modular Python pipeline to acquire, validate, transform, and save HTML data.
 
 The pipeline has four stages:
 
@@ -64,19 +58,15 @@ The pipeline has four stages:
 - **Transform** - extract text and metadata into a structured dataset.
 - **Load** - save the processed data to a CSV file.
 
-The example uses Requests for HTTP acquisition,
-BeautifulSoup for HTML parsing,
-and Pandas for tabular data processing.
+The project uses Requests for HTTP acquisition, BeautifulSoup for HTML parsing, and Pandas for tabular data processing.
 
-The Transform stage also calculates
-derived fields such as abstract word count
-and number of authors.
+The Transform stage also calculates derived fields such as abstract word count and number of authors.
 
-Explore these important project components:
+Important project components include:
 
-- [pyproject.toml](pyproject.toml) - project identity, dependencies, and tool configuration.
-- [src/nlp/pipeline_web_html.py](src/nlp/pipeline_web_html.py) - main EVTL pipeline orchestrator.
-- [src/nlp/config.py](src/nlp/config.py) - example web page and path configuration.
+- [pyproject.toml](pyproject.toml) - project configuration.
+- [src/nlp/pipeline_web_html.py](src/nlp/pipeline_web_html.py) - main EVTL pipeline.
+- [src/nlp/config.py](src/nlp/config.py) - web page and path configuration.
 - [src/nlp/stage01_extract.py](src/nlp/stage01_extract.py) - retrieve HTML.
 - [src/nlp/stage02_validate.py](src/nlp/stage02_validate.py) - validate HTML structure.
 - [src/nlp/stage03_transform.py](src/nlp/stage03_transform.py) - extract metadata and build a DataFrame.
@@ -86,14 +76,9 @@ Explore these important project components:
 - [docs/](docs/) - project documentation.
 - [zensical.toml](zensical.toml) - documentation configuration.
 
-The goal is to understand how information
-is extracted from semi-structured web documents
-and transformed into analysis-ready data.
-
 ## Run the Project
 
-Follow the [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
-to set up your machine and project environment.
+Follow the [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/) to set up the project environment.
 
 From a VS Code terminal in the project root:
 
@@ -103,14 +88,9 @@ uv run python -m nlp.pipeline_web_html
 
 ## Results
 
-The pipeline retrieves an HTML document,
-validates its structure,
-extracts bibliographic information,
-and writes the results to a CSV file.
+The pipeline is designed to retrieve an HTML document, validate its structure, extract information, and write the results to a CSV file.
 
-The resulting dataset includes text and metadata
-along with derived measures
-such as abstract word count and author count.
+The resulting dataset includes text, metadata, abstract word count, and author count.
 
 Successful execution produces:
 
@@ -126,9 +106,6 @@ The following files are created:
 - `data/raw/case_raw.html` - original HTML document.
 - `data/processed/case_processed.csv` - extracted and transformed data.
 
-These artifacts provide evidence of successful
-HTML acquisition, validation, transformation, and persistence.
-
 ## Verification
 
 Run the automated tests:
@@ -139,33 +116,24 @@ uv run python -m pytest
 
 ## Project Documentation
 
-The [hosted documentation site](https://denisecase.github.io/nlp-05-web-documents/)
-is published using Zensical and GitHub Pages.
+The [hosted documentation site](https://ajerineg-coder.github.io/nlp-05-web-documents-custom/) is published using Zensical and GitHub Pages.
 
-The documentation site is used to present the project report,
-covering such sections as data, methods, results, visualizations,
-interpretation, and conclusions.
+The documentation site presents the project data, methods, results, visualizations, interpretation, and conclusions.
 
 ## CI/CD and GitHub Actions
 
-This project includes continuous integration and continuous deployment (CI/CD)
-to check project files and publish the docs.
+This project includes continuous integration and continuous deployment (CI/CD) to check project files and publish documentation.
 
 GitHub Actions include:
 
-- [CI: Python and Documentation Checks](https://github.com/denisecase/nlp-05-web-documents/actions/workflows/ci-python-zensical.yml)
-- [CD: Documentation Deployment](https://github.com/denisecase/nlp-05-web-documents/actions/workflows/deploy-zensical.yml)
+- [CI: Python and Documentation Checks](https://github.com/ajerineg-coder/nlp-05-web-documents-custom/actions/workflows/ci-python-zensical.yml)
+- [CD: Documentation Deployment](https://github.com/ajerineg-coder/nlp-05-web-documents-custom/actions/workflows/deploy-zensical.yml)
 
 ## Developer Reference
 
-Follow the
-[Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
-for **detailed instructions and troubleshooting**.
+Follow the [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/) for detailed instructions and troubleshooting.
 
 ### Initialize and Update the Python Environment
-
-With the project open in VS Code, open a VS Code terminal.
-Paste each command and hit Enter or Return after to run it.
 
 ```shell
 uvx pup-clean --delete
@@ -179,27 +147,16 @@ uv audit
 
 ### Set Up and Run Git Hooks
 
-Set up and run the git hooks to perform
-basic checks automatically before
-any changes get pushed to GitHub.
-
-In the VS Code terminal,
-paste each command and hit Enter or Return after to run it.
-
 ```shell
 uvx prek install --force
 uvx prek update --freeze --cooldown-days 7
 
 git add -A
 uvx prek run --all-files
-# repeat if changes were made
 uvx prek run --all-files
 ```
 
 ### Run Common Chores
-
-Run linters, formatters, type checks, tests, and
-build the documentation.
 
 ```shell
 uv run ruff check . --fix
@@ -212,8 +169,6 @@ uv run python -m zensical build
 
 ### Git add-commit-push to GitHub
 
-After making useful changes, save your work to GitHub.
-
 ```shell
 git add -A
 git commit -m "describe your changes in quotes"
@@ -222,24 +177,25 @@ git push -u origin main
 
 ## Developer Notes
 
-- Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
-- Use `CTRL+f` to find (and replace) text within a file.
+- Use the up and down arrows to scroll through previous terminal commands.
+- Use Command + F to find text within a file on macOS.
 
 ## Developer Tools
 
-This project uses professional Python tools to support development,
-testing, documentation, and code quality.
-
 - [uv](https://docs.astral.sh/uv/) - Python environments and dependencies.
-- [Ruff](https://docs.astral.sh/ruff/) - Python linting and formatting, configured in [.ruff.toml](.ruff.toml).
+- [Ruff](https://docs.astral.sh/ruff/) - Python linting and formatting.
 - [ty](https://docs.astral.sh/ty/) - Python type checking.
-- [pytest](https://docs.pytest.org/) - automated Python testing, configured in [.pytest.toml](.pytest.toml).
-- [prek](https://prek.j178.dev/) - Git hooks and automated checks, configured in [prek.toml](prek.toml).
-- [Zensical](https://zensical.org/) - project documentation, configured in [zensical.toml](zensical.toml).
+- [pytest](https://docs.pytest.org/) - automated Python testing.
+- [prek](https://prek.j178.dev/) - Git hooks and automated checks.
+- [Zensical](https://zensical.org/) - project documentation.
+
+## Acknowledgments
+
+This project is based on the original [nlp-05-web-documents](https://github.com/denisecase/nlp-05-web-documents) project created by Dr. Denise Case.
 
 ## Links
 
-- [Hosted Documentation](https://denisecase.github.io/nlp-05-web-documents/)
+- [Hosted Documentation](https://ajerineg-coder.github.io/nlp-05-web-documents-custom/)
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
