@@ -199,3 +199,11 @@ This project is based on the original [nlp-05-web-documents](https://github.com/
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
+
+## D2: Technical Modification
+
+I added a new column to count the sentences in the abstract. I wanted to see how many sentences were in the paper in addition to the word count.
+
+I expected the DataFrame to increase from 8 to 9 columns. After running the project, it worked as expected and the new column was included.
+
+This showed me how I can add more information to the existing pipeline without changing the rest of the process.

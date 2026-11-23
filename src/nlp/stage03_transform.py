@@ -257,6 +257,14 @@ def run_transform(
     abstract_word_count: int = len(abstract.split()) if abstract != "unknown" else 0
     LOG.info(f"Calculated abstract word count: {abstract_word_count}")
 
+    # Calculate derived field: abstract sentence count
+    abstract_sentence_count: int = (
+        len([s for s in __import__("re").split(r"[.!?]\s+", abstract) if s.strip()])
+        if abstract != "unknown"
+        else 0
+    )
+    LOG.info(f"Calculated abstract sentence count: {abstract_sentence_count}")
+
     # Calculate derived field: author count
     author_count: int = (
         len([a.strip() for a in authors.split(",")]) if authors != "unknown" else 0
@@ -275,6 +283,7 @@ def run_transform(
         "submitted": date_submitted_str,
         "abstract": abstract,
         "abstract_word_count": abstract_word_count,
+        "abstract_sentence_count": abstract_sentence_count,
         "author_count": author_count,
     }
 
