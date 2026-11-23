@@ -106,3 +106,25 @@ provide inputs for subsequent NLP analysis.
 - [Project Instructions](project-instructions.md)
 - [Professional Python Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Professional Python Project Explainer](https://pup-pack.github.io/professional-python-project-explainer/)
+
+## D3: Custom Application
+
+For my custom project, I chose a research paper about elder fraud and the challenges families face when trying to intervene. I wanted to compare the length and structure of its abstract with the original Agents of Chaos paper.
+
+I used Python and BeautifulSoup to extract information from the arXiv webpage. The pipeline collected the title, authors, abstract, subject, and submission date. I also used the word and sentence count calculations to compare the two papers.
+
+### Results
+
+| Measurement | Agents of Chaos | Elder Fraud Paper |
+|---|---:|---:|
+| Authors | 38 | 7 |
+| Abstract Words | 177 | 220 |
+| Abstract Sentences | 9 | 11 |
+
+### Abstract Word Count Comparison
+
+![Abstract word count comparison](images/abstract_comparison.png)
+
+The elder fraud paper had 220 words and 11 sentences in its abstract, compared to 177 words and 9 sentences in the original paper. Even though the elder fraud paper had fewer authors, its abstract was longer.
+
+One limitation is that I only compared two research papers. If I continued this project, I would compare more papers to see whether there are any patterns in abstract length across different research topics.

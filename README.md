@@ -207,3 +207,25 @@ I added a new column to count the sentences in the abstract. I wanted to see how
 I expected the DataFrame to increase from 8 to 9 columns. After running the project, it worked as expected and the new column was included.
 
 This showed me how I can add more information to the existing pipeline without changing the rest of the process.
+
+## D3: Custom Application
+
+For my custom project, I chose a research paper about elder fraud and the challenges families face when trying to stop scams. I chose this topic because it relates to my work in fraud prevention.
+
+I used Python and BeautifulSoup to collect information from the paper's arXiv webpage. I also used Pandas to organize the results and Matplotlib to create a chart comparing the abstract word counts.
+
+The elder fraud paper had 220 words, 11 sentences, and 7 authors, compared to 177 words, 9 sentences, and 38 authors in the original paper.
+
+The results showed that the elder fraud paper had a longer abstract despite having fewer authors. One limitation is that I only compared two papers, so I would need more data to identify any larger patterns.
+
+### How to Run
+
+Run the project using:
+
+uv run python -m nlp.pipeline_web_html
+
+To create the comparison chart, run:
+
+uv run python src/create_chart.py
+
+The chart and additional results are available in docs/index.md.
