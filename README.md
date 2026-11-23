@@ -24,7 +24,7 @@ This project focuses on acquiring and extracting information from HTML web docum
 
 The goal is to retrieve a web page, validate its structure, extract relevant information, and save the results for further analysis.
 
-I am interested in exploring how web document extraction can be applied to financial fraud research and how unstructured information can be transformed into useful data for analysis.
+For my custom project, I analyzed an academic research paper about elder fraud and the challenges families face when trying to intervene. I chose this topic because it relates to my work in fraud prevention. I used Python to extract information from the paper's webpage and compared its abstract with the original Agents of Chaos paper.
 
 This project builds on the EVTL pipeline introduced in Module 4, using HTML documents rather than JSON API responses.
 
@@ -43,7 +43,7 @@ The source document contains information such as:
 - Submission information.
 - arXiv identifier.
 
-For my customized project, I plan to explore academic research related to financial fraud detection.
+For my customized project, I used the arXiv paper "I Don't Think It's a Scam". I compared its abstract word count, sentence count, and author count with the original Agents of Chaos paper.
 
 The pipeline preserves the original HTML and produces a structured CSV dataset containing extracted metadata.
 
@@ -199,6 +199,8 @@ This project is based on the original [nlp-05-web-documents](https://github.com/
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
+- [Elder Fraud Research Paper](https://arxiv.org/abs/2611.24899)
+- [Original Example Project](https://github.com/denisecase/nlp-05-web-documents)
 
 ## D2: Technical Modification
 
@@ -218,6 +220,10 @@ The elder fraud paper had 220 words, 11 sentences, and 7 authors, compared to 17
 
 The results showed that the elder fraud paper had a longer abstract despite having fewer authors. One limitation is that I only compared two papers, so I would need more data to identify any larger patterns.
 
+### Abstract Word Count Comparison
+
+![Bar chart comparing abstract word counts for the Agents of Chaos and elder fraud research papers](docs/images/abstract_comparison.png)
+
 ### How to Run
 
 Run the project using:
@@ -226,6 +232,10 @@ uv run python -m nlp.pipeline_web_html
 
 To create the comparison chart, run:
 
+uv run python src/create_chart.py
+
+uv sync
+uv run python -m nlp.pipeline_web_html
 uv run python src/create_chart.py
 
 The chart and additional results are available in docs/index.md.
